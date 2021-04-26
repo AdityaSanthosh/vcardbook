@@ -1,6 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: "vcardbook",
+    author: "Santhosh Aditya",
+    description: "Generate Business Card Sites in one step",
+    keywords: "VCardBook, Vcard, Business Cards, Personal Sites",
+    url: "",
   },
   plugins: [
     {

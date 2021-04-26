@@ -1,0 +1,84 @@
+.Name {
+	position: absolute;
+	margin-top: -55rem;
+	margin-left: 25rem;
+	color: floralwhite;
+}
+
+.Name h1 {
+	font-size: 4rem;
+}
+
+.imagediv {
+    position: relative;
+    margin-left: -30rem;
+}
+
+#content-area {
+	height: 100%;
+	width:900px;
+	position:absolute;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	bottom: 0px;
+
+}
+
+#buttons {
+    position: absolute;
+    margin-top: -45rem;
+    margin-left: 8rem;
+}
+
+.but-col-l{
+	float: left;
+	margin: 0px;
+}
+
+.but-col-r{
+	float:right;
+	margin: 0px;
+}
+
+.but {
+	margin-bottom: 40px;
+	
+}
+
+#socmed {
+	display: inline-block;
+	width:900px;
+	height:85px;
+	margin-top:30px;
+}
+
+.socmed1 {
+	width:85px;
+	height:85px;
+	position:absolute;
+	
+}
+
+.socmed2 {
+	width:85px;
+	height:85px;
+	position:absolute;
+	left:275px;
+}
+
+.socmed3 {
+	width:85px;
+	height:85px;
+	position:absolute;
+	right:275px;
+
+}
+
+.socmed4 {
+	width:85px;
+	height:85px;
+	position:absolute;
+	right:0px;
+
+}
