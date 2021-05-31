@@ -4,7 +4,7 @@ import * as FooterStyles from '../styles/footer.module.scss'
 const Footer = () => {
     return  (
         <div className={FooterStyles.footer}>
-            <p>Copyright VCardBook @ 2021</p>
+            <p>Copyright @ 2021 VCardBook. All Rights Reserved </p>
         </div>
     )
 }

@@ -18,7 +18,7 @@ const IndexPage = () => {
         }
       }
     }
-    site {
+    site {~
       siteMetadata {
         title
         url
@@ -63,24 +63,8 @@ const IndexPage = () => {
             We'll never share your email with anyone else.
           </Form.Text>
         </FormGroup>
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
-        </Form.Group>
-        <Form.Group>
-          <FormLabel>Facebook Link</FormLabel>
-          <Form.Control size="md" type="text" placeholder="Facebook Link" />
-        </Form.Group>
-        <Form.Group>
-          <FormLabel>Instagram Link</FormLabel>
-          <Form.Control size="md" type="text" placeholder="Instagram Link" />
-        </Form.Group>
-        <Form.Group>
-          <FormLabel>Twitter Link</FormLabel>
-          <Form.Control size="md" type="text" placeholder="Twitter Link" />
-        </Form.Group>
         <Button variant="primary" type="submit">
-          Submit
+          Subscribe
         </Button>
       </Form>
       </Layout>

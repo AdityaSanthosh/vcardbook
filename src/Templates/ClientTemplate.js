@@ -12,6 +12,8 @@ import callOfficeImg from "../images/call-office.png"
 import VisitWebsiteImg from "../images/visit-website.png"
 import * as clientTemplateStyles from '../styles/clientTemplate.module.scss'
 import { Helmet } from 'react-helmet'
+import {saveAs} from 'file-saver'
+import VCard from 'vcard-creator'
 
 export const query = graphql`
 query ($clientName:String!) {
@@ -39,8 +41,32 @@ site {
 }
 `
 
-const Client = (props) => {
-		  return (
+
+export default function Client(props) {
+		const vcardGenerator = () => {
+			const myVCard = new VCard();
+			const name = `${props.data.contentfulClient.clientName}`
+			const email = `${props.data.contentfulClient.email}`
+			const personalphone = `${props.data.contentfulClient.personalmobile}`
+			const officephone = `${props.data.contentfulClient.officemobile}`
+			const website = `${props.data.contentfulClient.website}`
+			myVCard
+			// Add personal data
+			.addName(name)
+			// Add work data
+			.addEmail(email)
+			.addPhoneNumber(personalphone, 'PREF;WORK')
+			.addPhoneNumber(officephone, 'WORK')
+			.addURL(website)
+
+			var data = new Blob([myVCard],{type:'text/vcf'});
+			var vcfURL = window.URL.createObjectURL(data)
+			var tempLink = document.createElement('a');
+			tempLink.href = vcfURL;
+			tempLink.setAttribute('download', 'vcard.vcf');
+			tempLink.click();
+		}
+		return (
 		<div>
 			<Helmet>
 				<title>{props.data.contentfulClient.clientName}</title>
@@ -71,7 +97,7 @@ const Client = (props) => {
 					<div className={clientTemplateStyles.butColL}>
 						<div className={clientTemplateStyles.but}><a href={`${props.data.contentfulClient.website}`} target="_blank"><img src={VisitWebsiteImg} width="377" height="98" alt=""/></a></div>
 						<div className={clientTemplateStyles.but}><a href={`${props.data.contentfulClient.bookAppointment}`} target="_blank"><img src={bookApptImg} width="377" height="98" alt=""/></a></div>
-						<div className={clientTemplateStyles.but}><a href="images/zaheer-khanzada.vcf"><img src={dlvcardImg} width="377" height="98" alt=""/></a></div>
+						<div className={clientTemplateStyles.but}><a href={vcardGenerator.vcfURL} onClick={vcardGenerator}><img src={dlvcardImg} width="377" height="98" alt=""/></a></div>
 					</div>
 					<div id={clientTemplateStyles.socmed}>
 						<div className={clientTemplateStyles.socmed1}><a href="https://www.facebook.com/ALUXREALTY" target="_blank"><img src={FacebookImg} width="85" height="85" alt=""/></a></div>
@@ -88,5 +114,3 @@ const Client = (props) => {
 		</div>
     )
 }
-
-export default Client
