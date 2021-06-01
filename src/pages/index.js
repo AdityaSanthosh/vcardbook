@@ -1,6 +1,5 @@
 import * as React from "react"
 import * as IndexStyles from './../styles/index.module.scss'
-import Layout from '../layouts/Layout'
 import {graphql,Link,useStaticQuery} from 'gatsby'
 import { Form, FormControl, FormGroup, FormLabel,Navbar,Container,Button, Jumbotron } from "react-bootstrap"
 import { Helmet } from "react-helmet"
@@ -18,7 +17,7 @@ const IndexPage = () => {
         }
       }
     }
-    site {~
+    site {
       siteMetadata {
         title
         url
@@ -29,7 +28,7 @@ const IndexPage = () => {
   }
 `)
   return(
-    <Layout>
+    <div className="container" className={IndexStyles.homepage}>
       <Helmet>
         <title>VCardBook</title>
         <meta name="description" content={clients.site.siteMetadata.description} />
@@ -42,32 +41,24 @@ const IndexPage = () => {
         <meta property="og:url" content={clients.site.siteMetadata.url} />
         <link rel="canonical" href="" />
       </Helmet>
-      <br />
-      <Jumbotron>
+      <div>
         <h1>VCardBook</h1>
-        <p>
-          We create Portfolio Webistes and Business Cards for Professionals
-        </p>
-        <p>
-          <Button variant="info">Request a site</Button>
-          <a href="/Avani Shah/"><Button variant="info" className="ml-3" >View Sample</Button></a>
-        </p>
-      </Jumbotron>
-      <h4>Request a custom site by filling this form</h4>
-      <br></br>
-      <Form>
-        <FormGroup controlId="formBasicEmail">
-          <FormLabel>Email Address</FormLabel>
-          <FormControl type="email" placeholder="Enter Email"></FormControl>
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
-        </FormGroup>
-        <Button variant="primary" type="submit">
-          Subscribe
-        </Button>
-      </Form>
-      </Layout>
+        <h2>Create your Personal Portfolio Site</h2>
+        <h2>Request a Personal Site Now!</h2>
+        <form method="post" action="#">
+          <div className="container">
+              <h2>Request a Personal site</h2>
+              <p>We will get in touch with you shortly by Email</p>
+          </div>
+          <div className="container">
+            <input type="text" placeholder="Email address" name="mail" required></input>
+          </div>
+          <div className="container">
+              <input type="submit" value="Subscribe"></input>
+          </div>
+        </form>
+        </div>
+      </div>
   )
 }
 
