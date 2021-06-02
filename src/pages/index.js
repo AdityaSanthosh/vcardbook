@@ -3,6 +3,7 @@ import * as IndexStyles from './../styles/index.module.scss'
 import {graphql,useStaticQuery} from 'gatsby'
 import { Helmet } from "react-helmet"
 import Navbar from "../components/navbar"
+import Footer from "../components/footer"
 
 const IndexPage = () => {
   const clients = useStaticQuery(graphql`
@@ -60,6 +61,7 @@ const IndexPage = () => {
           </div>
               <input type="submit" className="btn btn-lg btn-success" value="Request"></input>
         </form>
+        <Footer />
         </div>
       </div>
   )
