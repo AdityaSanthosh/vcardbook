@@ -12,7 +12,6 @@ import callOfficeImg from "../images/call-office.png"
 import VisitWebsiteImg from "../images/visit-website.png"
 import * as clientTemplateStyles from '../styles/clientTemplate.module.scss'
 import { Helmet } from 'react-helmet'
-import {saveAs} from 'file-saver'
 import VCard from 'vcard-creator'
 
 export const query = graphql`
@@ -85,9 +84,9 @@ export default function Client(props) {
 			<div className={clientTemplateStyles.imagediv}>
 			<img src={props.data.contentfulClient.clientPicture.resize.src}/>
 			</div>
-			<div className={clientTemplateStyles.Name}>
+			{/* <div className={clientTemplateStyles.Name}>
 				<h1>{props.data.contentfulClient.clientName}</h1>
-			</div>
+			</div> */}
 			<div id={clientTemplateStyles.buttons}>
 					<div className={clientTemplateStyles.butColR}>
 						<div className={clientTemplateStyles.but}><a href={`tel:${props.data.contentfulClient.personalmobile}`}><img src={callMobileImg} width="377" height="98" alt=""/></a></div>

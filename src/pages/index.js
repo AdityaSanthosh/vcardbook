@@ -1,8 +1,8 @@
 import * as React from "react"
 import * as IndexStyles from './../styles/index.module.scss'
-import {graphql,Link,useStaticQuery} from 'gatsby'
-import { Form, FormControl, FormGroup, FormLabel,Navbar,Container,Button, Jumbotron } from "react-bootstrap"
+import {graphql,useStaticQuery} from 'gatsby'
 import { Helmet } from "react-helmet"
+import Navbar from "../components/navbar"
 
 const IndexPage = () => {
   const clients = useStaticQuery(graphql`
@@ -28,7 +28,8 @@ const IndexPage = () => {
   }
 `)
   return(
-    <div className="container" className={IndexStyles.homepage}>
+    <div>
+      <Navbar />
       <Helmet>
         <title>VCardBook</title>
         <meta name="description" content={clients.site.siteMetadata.description} />
@@ -41,21 +42,23 @@ const IndexPage = () => {
         <meta property="og:url" content={clients.site.siteMetadata.url} />
         <link rel="canonical" href="" />
       </Helmet>
-      <div>
-        <h1>VCardBook</h1>
-        <h2>Create your Personal Portfolio Site</h2>
-        <h2>Request a Personal Site Now!</h2>
-        <form method="post" action="#">
-          <div className="container">
-              <h2>Request a Personal site</h2>
-              <p>We will get in touch with you shortly by Email</p>
+      <div className="container">
+        <div className="jumbotron bg-transparent" className={IndexStyles.jumb}>
+        <h1 className={IndexStyles.heading}>VCardBook</h1><br></br>
+        <span className={IndexStyles.description}><p className="lead"><strong>Create your Personal Business Site and share your automatically generated vcf card</strong></p></span>
+        <p className="lead mt-4">
+          <a className="btn btn btn-primary btn-lg mt-5" className={IndexStyles.pagebutton} href="Zaheer Khanzada" target="_blank" role="button">View Sample</a>
+        </p>
+        </div><br></br><br></br>
+        <form method="post" action="https://formspree.io/f/xjvjwpvz">
+          <div className="form-group">
+              <h1 className="text-white">Request a Personal site</h1>
+              <h5>We will get in touch with you shortly by Email</h5><br></br>
           </div>
-          <div className="container">
-            <input type="text" placeholder="Email address" name="mail" required></input>
+          <div className="form-group">
+            <input type="email" placeholder="Email address" name="_replyto" required></input>
           </div>
-          <div className="container">
-              <input type="submit" value="Subscribe"></input>
-          </div>
+              <input type="submit" className="btn btn-lg btn-success" value="Request"></input>
         </form>
         </div>
       </div>

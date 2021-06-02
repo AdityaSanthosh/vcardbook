@@ -1,0 +1,17 @@
+.nav__item {
+    font-size: 1.7rem;
+    margin-right: 2rem;
+}
+
+.navitemtext {
+    color: white;
+}
+
+.nav__item:hover {
+    text-decoration: underline;
+    color:white;
+}
+
+.nav__link--current {
+    text-decoration: underline;
+}
