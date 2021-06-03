@@ -1,6 +1,6 @@
 import * as React from "react"
 import * as IndexStyles from './../styles/index.module.scss'
-import {graphql,useStaticQuery} from 'gatsby'
+import {graphql,Link,useStaticQuery} from 'gatsby'
 import { Helmet } from "react-helmet"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
@@ -44,12 +44,16 @@ const IndexPage = () => {
         <link rel="canonical" href="" />
       </Helmet>
       <div className="container">
+        <div className="row">
+        <div className="col-12">
         <div className="jumbotron bg-transparent" className={IndexStyles.jumb}>
         <h1 className={IndexStyles.heading}>VCardBook</h1><br></br>
         <span className={IndexStyles.description}><p className="lead"><strong>Create your Personal Business Site and share your automatically generated vcf card</strong></p></span>
         <p className="lead mt-4">
-          <a className="btn btn btn-primary btn-lg mt-5" className={IndexStyles.pagebutton} href="Zaheer Khanzada" target="_blank" role="button">View Sample</a>
+          <Link className="btn btn-primary btn-lg mt-5" className={IndexStyles.pagebutton} to="Zaheer Khanzada" target="_blank" role="button">View Sample</Link>
         </p>
+        </div>
+        </div>
         </div><br></br><br></br>
         <form method="post" action="https://formspree.io/f/xjvjwpvz">
           <div className="form-group">
@@ -59,7 +63,7 @@ const IndexPage = () => {
           <div className="form-group">
             <input type="email" placeholder="Email address" name="_replyto" required></input>
           </div>
-              <input type="submit" className="btn btn-lg btn-success" value="Request"></input>
+          <input type="submit" className="btn btn-outline-light btn-lg" value="Request"></input>
         </form>
         <Footer />
         </div>
