@@ -5,9 +5,9 @@
 **
 
 Features:
--> Unlimited Static Sites Generation with Gatsby based on a Template
--> Automatic vcf File Generation using vcard-creator
--> New Site is Generated whenever we add data on Contentful CMS
--> Request via Email
--> Home Page
--> Hosted on Netlify
+* Unlimited Static Sites Generation with Gatsby based on a Template
+* Automatic vcf File Generation using vcard-creator
+* New Site is Generated whenever we add data on Contentful CMS
+* Request via Email
+* Home Page
+* Hosted on Netlify
